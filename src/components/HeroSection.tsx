@@ -146,15 +146,20 @@ const HeroSection = () => {
           />
           
           {/* Main logo with dynamic effects */}
-          <motion.div 
-            className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center border border-red-500/50 mx-auto relative overflow-hidden"
+                    <motion.div
+            className="w-24 h-24 bg-black/60 backdrop-blur-sm rounded-2xl flex items-center justify-center border-2 border-white/20 mx-auto relative overflow-hidden"
             animate={{
               boxShadow: [
-                '0 0 30px rgba(239, 68, 68, 0.4)',
-                '0 0 50px rgba(239, 68, 68, 0.8)',
-                '0 0 30px rgba(239, 68, 68, 0.4)',
+                '0 0 40px rgba(255, 255, 255, 0.3), 0 0 80px rgba(239, 68, 68, 0.4)',
+                '0 0 60px rgba(255, 255, 255, 0.5), 0 0 120px rgba(239, 68, 68, 0.8)',
+                '0 0 40px rgba(255, 255, 255, 0.3), 0 0 80px rgba(239, 68, 68, 0.4)',
               ],
               scale: [1, 1.05, 1],
+              borderColor: [
+                'rgba(255, 255, 255, 0.2)',
+                'rgba(239, 68, 68, 0.6)',
+                'rgba(255, 255, 255, 0.2)',
+              ],
             }}
             transition={{
               duration: 3,
@@ -163,15 +168,29 @@ const HeroSection = () => {
             }}
             whileHover={{
               scale: 1.15,
-              boxShadow: '0 0 60px rgba(239, 68, 68, 1)',
+              boxShadow: '0 0 80px rgba(255, 255, 255, 0.6), 0 0 150px rgba(239, 68, 68, 1)',
               rotateZ: 5,
             }}
           >
+            {/* Enhanced background glow */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-br from-black/40 via-red-500/20 to-black/50 rounded-2xl"
+              animate={{
+                opacity: [0.3, 0.7, 0.3],
+                scale: [1, 1.02, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            />
+            
             {/* Scanning line effect */}
             <motion.div
-              className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"
+              className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-white/80 to-transparent"
               animate={{
-                y: [0, 64, 0],
+                y: [0, 96, 0],
                 opacity: [0, 1, 0],
               }}
               transition={{
@@ -182,46 +201,72 @@ const HeroSection = () => {
               }}
             />
             
-            {/* Logo text with glow */}
-            <motion.span 
-              className="text-white font-bold text-2xl relative z-10"
-              animate={{
-                textShadow: [
-                  '0 0 10px rgba(255, 255, 255, 0.5)',
-                  '0 0 20px rgba(255, 255, 255, 0.8)',
-                  '0 0 10px rgba(255, 255, 255, 0.5)',
-                ],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            >
-              X
-            </motion.span>
+            {/* Logo image with enhanced visibility */}
+            <motion.div className="relative z-10 p-2">
+              <motion.img
+                src="/logo.png"
+                alt="Logo"
+                className="w-16 h-16 object-contain"
+                style={{
+                  filter: 'brightness(1.2) contrast(1.1)',
+                }}
+                animate={{
+                  filter: [
+                    'brightness(1.2) contrast(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))',
+                    'brightness(1.4) contrast(1.2) drop-shadow(0 0 25px rgba(255, 255, 255, 1))',
+                    'brightness(1.2) contrast(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))',
+                  ],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
+              
+              {/* Logo background highlight */}
+              <motion.div
+                className="absolute inset-0 bg-black/30 rounded-xl"
+                animate={{
+                  opacity: [0.1, 0.3, 0.1],
+                  scale: [0.9, 1.1, 0.9],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: 0.5,
+                }}
+              />
+            </motion.div>
             
-            {/* Sparkle effects */}
-            {[...Array(4)].map((_, i) => (
+            {/* Enhanced sparkle effects */}
+            {[...Array(6)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 bg-white rounded-full"
+                className="absolute w-1.5 h-1.5 bg-white rounded-full"
                 style={{
-                  top: `${20 + i * 15}%`,
-                  left: `${15 + i * 20}%`,
+                  top: `${15 + i * 12}%`,
+                  left: `${10 + i * 15}%`,
                 }}
                 animate={{
                   opacity: [0, 1, 0],
-                  scale: [0, 1, 0],
+                  scale: [0, 1.5, 0],
                 }}
                 transition={{
                   duration: 1.5,
                   repeat: Infinity,
-                  delay: i * 0.3,
+                  delay: i * 0.25,
                   ease: 'easeInOut',
                 }}
               />
             ))}
+            
+            {/* Corner accents */}
+            <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-white/40 rounded-tl-lg" />
+            <div className="absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-white/40 rounded-tr-lg" />
+            <div className="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-white/40 rounded-bl-lg" />
+            <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-white/40 rounded-br-lg" />
           </motion.div>
         </motion.div>
 
@@ -269,7 +314,7 @@ const HeroSection = () => {
                 transformOrigin: 'center',
               }}
             />
-          </motion.div>
+      </motion.div>
           
           {/* Logo with reliable reveal */}
           <div className="relative flex items-center justify-center">
@@ -281,7 +326,7 @@ const HeroSection = () => {
                 scale: [0.8, 1.05, 1],
               } : {}}
               transition={{
-                duration: 1,
+      duration: 1,
                 ease: 'easeOut',
               }}
             >
@@ -393,7 +438,7 @@ const HeroSection = () => {
               
               {/* Button shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </motion.button>
+      </motion.button>
 
 
           </motion.div>
