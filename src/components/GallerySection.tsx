@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { motion, useInView } from 'framer-motion';
 import LazyImage from './LazyImage';
 
@@ -9,7 +9,8 @@ const GallerySection = () => {
     margin: '-100px 0px' 
   });
 
-  const materials = [
+  // Memoize materials array to prevent unnecessary re-renders
+  const materials = useMemo(() => [
     {
       id: 1,
       name: 'Metall',
@@ -34,15 +35,16 @@ const GallerySection = () => {
       image: '/glas.webp',
       description: 'Klare Gravuren für moderne und elegante Designs.'
     }
-  ];
+  ], []);
 
+  // Enhanced animation variants matching AboutSection
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
       }
     }
   };
@@ -50,10 +52,9 @@ const GallerySection = () => {
   const itemVariants = {
     hidden: { 
       opacity: 0,
-      y: 80,
-      x: -40,
+      y: 60,
+      x: -30,
       scale: 0.8,
-      rotateY: -15,
       filter: 'blur(10px)',
     },
     visible: { 
@@ -61,12 +62,11 @@ const GallerySection = () => {
       y: 0,
       x: 0,
       scale: 1,
-      rotateY: 0,
       filter: 'blur(0px)',
       transition: {
-        duration: 0.9,
+        duration: 0.8,
         type: 'spring',
-        bounce: 0.3,
+        bounce: 0.4,
         ease: 'easeOut',
       }
     }
@@ -75,9 +75,9 @@ const GallerySection = () => {
   const titleVariants = {
     hidden: { 
       opacity: 0,
-      y: -40,
-      scale: 0.9,
-      filter: 'blur(8px)',
+      y: -50,
+      scale: 0.8,
+      filter: 'blur(10px)',
     },
     visible: { 
       opacity: 1,
@@ -85,46 +85,33 @@ const GallerySection = () => {
       scale: 1,
       filter: 'blur(0px)',
       transition: {
-        duration: 0.8,
+        duration: 1,
         type: 'spring',
-        bounce: 0.2,
+        bounce: 0.3,
+        ease: 'easeOut',
       }
     }
   };
 
   return (
     <section ref={ref} className="w-full py-12 sm:py-16 md:py-20 bg-black relative overflow-hidden">
-      {/* Enhanced animated background elements */}
+      {/* Simplified background elements - reduced animations */}
       <motion.div 
         className="absolute inset-0"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 1.5 }}
       >
-        {/* Floating laser lines */}
+        {/* Single subtle laser line - reduced complexity */}
         <motion.div 
-          className="absolute top-1/3 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600/20 to-transparent"
+          className="absolute top-1/3 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600/15 to-transparent"
           animate={isInView ? {
-            scaleX: [0, 1, 0.7, 1],
-            opacity: [0, 0.4, 0.2, 0.4],
+            opacity: [0, 0.3, 0.1, 0.3],
           } : {}}
           transition={{
-            duration: 4,
+            duration: 6,
             repeat: Infinity,
             ease: 'easeInOut',
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-1/3 right-0 w-full h-[1px] bg-gradient-to-l from-transparent via-red-600/15 to-transparent"
-          animate={isInView ? {
-            scaleX: [0, 0.8, 1, 0.6],
-            opacity: [0, 0.3, 0.5, 0.3],
-          } : {}}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: 1.5,
           }}
         />
       </motion.div>
@@ -146,9 +133,9 @@ const GallerySection = () => {
           </motion.h2>
           <motion.p 
             className="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base md:text-lg px-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(5px)' }}
+            animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 30, filter: 'blur(5px)' }}
+            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
             style={{
               textShadow: isInView ? '0 0 10px rgba(255, 255, 255, 0.1)' : 'none',
             }}
@@ -166,25 +153,23 @@ const GallerySection = () => {
           {materials.map((material, index) => (
             <motion.div
               key={material.id}
-              className="group relative overflow-hidden rounded-lg bg-gray-900 border border-gray-800 touch-target"
+              className="group relative overflow-hidden rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800 hover:border-red-900 transition-all duration-300 backdrop-blur-sm"
               variants={itemVariants}
               whileHover={{
-                y: -15,
-                scale: 1.03,
-                rotateY: 5,
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(239, 68, 68, 0.3)',
+                y: -10,
+                scale: 1.02,
+                boxShadow: '0 20px 40px -10px rgba(239, 68, 68, 0.3), 0 0 30px rgba(239, 68, 68, 0.2)',
                 borderColor: 'rgb(127, 29, 29)',
               }}
               whileTap={{
                 scale: 0.98,
               }}
               style={{
-                transformStyle: 'preserve-3d',
-                boxShadow: '0 10px 30px -10px rgba(0, 0, 0, 0.3)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
               }}
             >
               <div className="aspect-video overflow-hidden relative">
-                {/* Image overlay effect */}
+                {/* Enhanced overlay effect */}
                 <motion.div 
                   className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
                 />
@@ -193,9 +178,6 @@ const GallerySection = () => {
                   src={material.image}
                   alt={material.name}
                   className="w-full h-full transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                  style={{
-                    filter: 'brightness(1.0) contrast(1.0)',
-                  }}
                 />
                 
                 {/* Animated scanning line effect */}
