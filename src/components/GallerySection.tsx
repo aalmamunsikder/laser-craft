@@ -12,25 +12,25 @@ const GallerySection = () => {
     {
       id: 1,
       name: 'Metall',
-      image: 'https://images.unsplash.com/photo-1633526543814-9718c8922b7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'public/metall.webp',
       description: 'Hochwertige Gravuren auf Edelstahl, Aluminium und weiteren Metallen.'
     },
     {
       id: 2,
       name: 'Holz',
-      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'public/holz.jpg',
       description: 'Präzise Gravuren auf nachhaltigem Holz für besondere Produkte.'
     },
     {
       id: 3,
       name: 'Leder',
-      image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'public/leder.webp',
       description: 'Stilvolle Gravuren auf Leder für exklusive Accessoires.'
     },
     {
       id: 4,
       name: 'Acryl / Glas',
-      image: 'https://images.unsplash.com/photo-1619118884592-11b151f1ae11?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'public/glas.webp',
       description: 'Klare Gravuren für moderne und elegante Designs.'
     }
   ];

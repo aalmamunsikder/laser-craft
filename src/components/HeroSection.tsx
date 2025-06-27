@@ -395,16 +395,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.button>
 
-            {/* Secondary CTA */}
-            <motion.button 
-              className="group px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-600 text-gray-300 text-base sm:text-lg font-medium rounded-lg hover:border-red-500 hover:text-white transition-all duration-300 w-full sm:w-auto"
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: '0 0 15px rgba(239, 68, 68, 0.2)',
-              }}
-            >
-              Portfolio Ansehen
-            </motion.button>
+
           </motion.div>
         </motion.div>
       </div>
