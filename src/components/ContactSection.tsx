@@ -80,7 +80,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section ref={ref} id="contact" className="w-full py-24 bg-black relative overflow-hidden">
+    <section ref={ref} id="contact" className="w-full py-12 sm:py-16 md:py-24 bg-black relative overflow-hidden">
       {/* Enhanced animated background elements */}
       <motion.div 
         className="absolute inset-0"
@@ -116,7 +116,7 @@ const ContactSection = () => {
         />
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto mobile-container">
         <motion.div 
           className="text-center mb-16"
           variants={titleVariants}

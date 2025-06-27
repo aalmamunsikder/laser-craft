@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import LazyImage from './LazyImage';
 
 const GallerySection = () => {
   const ref = useRef(null);
@@ -92,7 +93,7 @@ const GallerySection = () => {
   };
 
   return (
-    <section ref={ref} className="w-full py-20 bg-black relative overflow-hidden">
+    <section ref={ref} className="w-full py-12 sm:py-16 md:py-20 bg-black relative overflow-hidden">
       {/* Enhanced animated background elements */}
       <motion.div 
         className="absolute inset-0"
@@ -128,7 +129,7 @@ const GallerySection = () => {
         />
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto mobile-container">
         <motion.div 
           className="text-center mb-16"
           variants={titleVariants}
@@ -136,7 +137,7 @@ const GallerySection = () => {
           animate={isInView ? 'visible' : 'hidden'}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="mobile-text-xl font-bold mb-6"
             style={{
               textShadow: isInView ? '0 0 20px rgba(255, 255, 255, 0.3)' : 'none',
             }}
@@ -144,7 +145,7 @@ const GallerySection = () => {
             Unsere Galerie
           </motion.h2>
           <motion.p 
-            className="max-w-2xl mx-auto text-gray-300"
+            className="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base md:text-lg px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -157,7 +158,7 @@ const GallerySection = () => {
         </motion.div>
 
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
@@ -165,7 +166,7 @@ const GallerySection = () => {
           {materials.map((material, index) => (
             <motion.div
               key={material.id}
-              className="group relative overflow-hidden rounded-lg bg-gray-900 border border-gray-800"
+              className="group relative overflow-hidden rounded-lg bg-gray-900 border border-gray-800 touch-target"
               variants={itemVariants}
               whileHover={{
                 y: -15,
@@ -188,12 +189,12 @@ const GallerySection = () => {
                   className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
                 />
                 
-                <motion.img 
-                  src={material.image} 
-                  alt={material.name} 
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" 
-                  whileHover={{
-                    filter: 'brightness(1.1) contrast(1.1)',
+                <LazyImage
+                  src={material.image}
+                  alt={material.name}
+                  className="w-full h-full transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                  style={{
+                    filter: 'brightness(1.0) contrast(1.0)',
                   }}
                 />
                 
@@ -216,13 +217,13 @@ const GallerySection = () => {
               
               {/* Content with enhanced styling */}
               <motion.div 
-                className="absolute bottom-0 left-0 p-6"
+                className="absolute bottom-0 left-0 p-4 sm:p-6"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 + index * 0.1 }}
               >
                 <motion.h3 
-                  className="text-xl font-bold mb-1 group-hover:text-white transition-colors duration-300"
+                  className="text-lg sm:text-xl font-bold mb-1 group-hover:text-white transition-colors duration-300"
                   style={{
                     textShadow: '0 0 10px rgba(255, 255, 255, 0.2)',
                   }}

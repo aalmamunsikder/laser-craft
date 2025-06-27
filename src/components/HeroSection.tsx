@@ -112,7 +112,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content Container - Properly Centered */}
-      <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center text-center px-4 py-16">
+      <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center text-center mobile-container py-8 sm:py-16">
         {/* Demo Logo - Above LASER CRAFT Title */}
         <motion.div 
           className="mb-8 relative"
@@ -147,7 +147,7 @@ const HeroSection = () => {
           
           {/* Main logo with dynamic effects */}
                     <motion.div
-            className="w-24 h-24 bg-black/60 backdrop-blur-sm rounded-2xl flex items-center justify-center border-2 border-white/20 mx-auto relative overflow-hidden"
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-black/60 backdrop-blur-sm rounded-2xl flex items-center justify-center border-2 border-white/20 mx-auto relative overflow-hidden"
             animate={{
               boxShadow: [
                 '0 0 40px rgba(255, 255, 255, 0.3), 0 0 80px rgba(239, 68, 68, 0.4)',
@@ -206,7 +206,9 @@ const HeroSection = () => {
               <motion.img
                 src="/logo.png"
                 alt="Logo"
-                className="w-16 h-16 object-contain"
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
+                loading="eager"
+                decoding="async"
                 style={{
                   filter: 'brightness(1.2) contrast(1.1)',
                 }}
@@ -319,7 +321,7 @@ const HeroSection = () => {
           {/* Logo with reliable reveal */}
           <div className="relative flex items-center justify-center">
             <motion.div
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight flex items-center justify-center"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-tight flex items-center justify-center"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={animationPhase >= 3 ? {
                 opacity: 1,
@@ -394,7 +396,7 @@ const HeroSection = () => {
           {/* Improved tagline */}
           <div className="space-y-6 text-center">
             <h2 
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-100 leading-relaxed max-w-3xl mx-auto"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-gray-100 leading-relaxed max-w-3xl mx-auto px-4"
               style={{
                 textShadow: '0 0 20px rgba(255, 255, 255, 0.2)',
               }}
@@ -403,7 +405,7 @@ const HeroSection = () => {
             </h2>
             
             <motion.p 
-              className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto px-4"
               initial={{ opacity: 0, y: 20 }}
               animate={animationPhase >= 4 ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -421,7 +423,7 @@ const HeroSection = () => {
           >
             {/* Primary CTA */}
             <motion.button 
-              className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-red-600 to-red-700 text-white text-base sm:text-lg font-semibold rounded-lg overflow-hidden shadow-lg w-full sm:w-auto"
+              className="group relative px-6 sm:px-8 py-4 sm:py-4 bg-gradient-to-r from-red-600 to-red-700 text-white text-base sm:text-lg font-semibold rounded-lg overflow-hidden shadow-lg w-full sm:w-auto touch-target"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: '0 0 30px rgba(239, 68, 68, 0.5)',

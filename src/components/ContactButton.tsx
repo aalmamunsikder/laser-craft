@@ -10,7 +10,7 @@ const ContactButton: React.FC<ContactButtonProps> = ({ onClick }) => {
   return (
     <motion.button
       onClick={onClick}
-      className="fixed bottom-8 right-8 z-50 bg-red-600 text-white p-4 rounded-full shadow-lg border border-red-500 group"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 bg-red-600 text-white p-3 sm:p-4 rounded-full shadow-lg border border-red-500 group touch-target"
       whileHover={{
         scale: 1.15,
         boxShadow: '0 0 30px rgba(239, 68, 68, 0.8), 0 0 60px rgba(239, 68, 68, 0.4)',
@@ -63,7 +63,7 @@ const ContactButton: React.FC<ContactButtonProps> = ({ onClick }) => {
           ease: 'easeInOut',
         }}
       >
-        <MessageCircleIcon className="w-6 h-6 relative z-10" />
+        <MessageCircleIcon className="w-5 h-5 sm:w-6 sm:h-6 relative z-10" />
       </motion.div>
       
       <span className="sr-only">Contact Us</span>

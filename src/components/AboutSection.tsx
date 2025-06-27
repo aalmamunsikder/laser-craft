@@ -101,7 +101,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section ref={ref} className="w-full py-20 bg-black relative overflow-hidden">
+    <section ref={ref} className="w-full py-12 sm:py-16 md:py-20 bg-black relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute top-0 left-0 w-full h-full"
@@ -114,7 +114,7 @@ const AboutSection = () => {
         <div className="absolute top-1/2 left-1/2 w-1 h-32 bg-red-600/10 rotate-12 blur-md transform -translate-x-1/2 -translate-y-1/2"></div>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto mobile-container">
         <motion.div 
           className="text-center mb-16"
           variants={titleVariants}
