@@ -12,25 +12,25 @@ const GallerySection = () => {
     {
       id: 1,
       name: 'Metall',
-      image: 'public/metall.webp',
+      image: '/metall.webp',
       description: 'Hochwertige Gravuren auf Edelstahl, Aluminium und weiteren Metallen.'
     },
     {
       id: 2,
       name: 'Holz',
-      image: 'public/holz.jpg',
+      image: '/holz.jpg',
       description: 'Präzise Gravuren auf nachhaltigem Holz für besondere Produkte.'
     },
     {
       id: 3,
       name: 'Leder',
-      image: 'public/leder.webp',
+      image: '/leder.webp',
       description: 'Stilvolle Gravuren auf Leder für exklusive Accessoires.'
     },
     {
       id: 4,
       name: 'Acryl / Glas',
-      image: 'public/glas.webp',
+      image: '/glas.webp',
       description: 'Klare Gravuren für moderne und elegante Designs.'
     }
   ];
