@@ -12,18 +12,18 @@ const AboutSection = () => {
   const features = [
     {
       icon: <ZapIcon className="w-8 h-8 text-red-600" />,
-      title: 'Fast Scalability',
-      description: 'From prototypes to mass production, we scale with your needs without compromising on quality.'
+      title: 'Schnelle Skalierbarkeit',
+      description: 'Von Prototypen bis zur Massenproduktion – wir skalieren nach Ihren Anforderungen ohne Qualitätsverlust.'
     },
     {
       icon: <LayersIcon className="w-8 h-8 text-red-600" />,
-      title: 'Custom Solutions', 
-      description: 'Tailored laser engraving solutions for your unique brand requirements and product specifications.'
+      title: 'Individuelle Lösungen', 
+      description: 'Maßgeschneiderte Gravurlösungen für Ihre spezifischen Markenanforderungen und Produktspezifikationen.'
     },
     {
       icon: <HeartIcon className="w-8 h-8 text-red-600" />,
-      title: 'Emotional Branding',
-      description: 'We create lasting impressions by connecting your brand with customers on an emotional level.'
+      title: 'Emotionales Branding',
+      description: 'Wir schaffen bleibende Eindrücke, indem wir Ihre Marke auf emotionaler Ebene mit Ihren Kunden verbinden.'
     }
   ];
 
@@ -127,7 +127,7 @@ const AboutSection = () => {
               textShadow: isInView ? '0 0 20px rgba(255, 255, 255, 0.3)' : 'none',
             }}
           >
-            About Us
+            Über Uns
           </motion.h2>
           <motion.p 
             className="max-w-2xl mx-auto text-gray-300 text-lg"
@@ -138,9 +138,7 @@ const AboutSection = () => {
               textShadow: isInView ? '0 0 10px rgba(255, 255, 255, 0.1)' : 'none',
             }}
           >
-            We specialize in premium laser engraving, transforming ordinary
-            products into extraordinary brand experiences that resonate with
-            your audience.
+            Wir sind auf Premium-Lasergravuren spezialisiert und verwandeln gewöhnliche Produkte in außergewöhnliche Markenerlebnisse, die Ihr Publikum begeistern.
           </motion.p>
         </motion.div>
 

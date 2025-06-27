@@ -129,7 +129,7 @@ const ContactSection = () => {
               textShadow: isInView ? '0 0 20px rgba(255, 255, 255, 0.3)' : 'none',
             }}
           >
-            Get In Touch
+            Kontakt Aufnehmen
           </motion.h2>
           <motion.p 
             className="max-w-2xl mx-auto text-gray-300"
@@ -140,8 +140,7 @@ const ContactSection = () => {
               textShadow: isInView ? '0 0 10px rgba(255, 255, 255, 0.1)' : 'none',
             }}
           >
-            Ready to elevate your brand with premium laser engraving? Contact us
-            today for a consultation.
+            Bereit, Ihre Marke mit Premium-Lasergravuren auf ein neues Level zu bringen? Kontaktieren Sie uns für eine Beratung!
           </motion.p>
         </motion.div>
 
@@ -171,7 +170,7 @@ const ContactSection = () => {
                 textShadow: '0 0 10px rgba(255, 255, 255, 0.2)',
               }}
             >
-              Send Us a Message
+              Nachricht Senden
             </motion.h3>
             
             <form onSubmit={handleSubmit}>
@@ -204,7 +203,7 @@ const ContactSection = () => {
                 transition={{ delay: 0.6 }}
               >
                 <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  Email
+                  E-Mail
                 </label>
                 <motion.input 
                   type="email" 
@@ -226,7 +225,7 @@ const ContactSection = () => {
                 transition={{ delay: 0.7 }}
               >
                 <label htmlFor="subject" className="block text-sm font-medium mb-1">
-                  Subject
+                  Betreff
                 </label>
                 <motion.input 
                   type="text" 
@@ -248,7 +247,7 @@ const ContactSection = () => {
                 transition={{ delay: 0.8 }}
               >
                 <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  Message
+                  Nachricht
                 </label>
                 <motion.textarea 
                   id="message" 
@@ -280,7 +279,7 @@ const ContactSection = () => {
                   boxShadow: '0 0 20px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                 }}
               >
-                <span>Send Message</span>
+                <span>Nachricht Senden</span>
                 <SendIcon size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </motion.button>
             </form>
@@ -298,25 +297,25 @@ const ContactSection = () => {
                 textShadow: '0 0 10px rgba(255, 255, 255, 0.2)',
               }}
             >
-              Contact Information
+              Kontaktinformationen
             </motion.h3>
             
             <div className="space-y-8">
               {[
                 {
                   icon: <MailIcon className="w-6 h-6 text-red-600" />,
-                  title: 'Email',
-                  lines: ['info@lasercraft.com', 'support@lasercraft.com'],
+                  title: 'E-Mail',
+                  lines: ['info@lumixpert.de'],
                 },
                 {
                   icon: <PhoneIcon className="w-6 h-6 text-red-600" />,
-                  title: 'Phone',
-                  lines: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
+                  title: 'Telefon',
+                  lines: ['+49 178 1638184'],
                 },
                 {
                   icon: <MapPinIcon className="w-6 h-6 text-red-600" />,
-                  title: 'Location',
-                  lines: ['123 Laser Avenue', 'San Francisco, CA 94103'],
+                  title: 'Adresse',
+                  lines: ['Schwalbenweg 19', '34212 Melsungen'],
                 },
               ].map((item, index) => (
                 <motion.div 
@@ -360,14 +359,14 @@ const ContactSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: 1 }}
               >
-                <h4 className="text-lg font-semibold mb-4">Business Hours</h4>
+                <h4 className="text-lg font-semibold mb-4">Öffnungszeiten</h4>
                 <div className="grid grid-cols-2 gap-2 text-gray-400">
-                  <p>Monday - Friday:</p>
-                  <p>9:00 AM - 6:00 PM</p>
-                  <p>Saturday:</p>
-                  <p>10:00 AM - 4:00 PM</p>
-                  <p>Sunday:</p>
-                  <p>Closed</p>
+                  <p>Montag – Freitag:</p>
+                  <p>9:00 – 18:00</p>
+                  <p>Samstag:</p>
+                  <p>10:00 – 16:00</p>
+                  <p>Sonntag:</p>
+                  <p>geschlossen</p>
                 </div>
               </motion.div>
             </div>

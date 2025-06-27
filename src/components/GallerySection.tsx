@@ -8,30 +8,30 @@ const GallerySection = () => {
     margin: '-100px 0px' 
   });
 
-  const products = [
+  const materials = [
     {
       id: 1,
-      name: 'Metal Business Card',
+      name: 'Metall',
       image: 'https://images.unsplash.com/photo-1633526543814-9718c8922b7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-      description: 'Premium stainless steel with laser-etched details'
+      description: 'Hochwertige Gravuren auf Edelstahl, Aluminium und weiteren Metallen.'
     },
     {
       id: 2,
-      name: 'Custom Nameplate',
-      image: 'https://images.unsplash.com/photo-1595079676601-f1adf5be5dee?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-      description: 'Brushed aluminum with precision engraving'
+      name: 'Holz',
+      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      description: 'Präzise Gravuren auf nachhaltigem Holz für besondere Produkte.'
     },
     {
       id: 3,
-      name: 'Wooden Keepsake',
-      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-      description: 'Sustainably sourced wood with intricate laser designs'
+      name: 'Leder',
+      image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      description: 'Stilvolle Gravuren auf Leder für exklusive Accessoires.'
     },
     {
       id: 4,
-      name: 'Acrylic Award',
+      name: 'Acryl / Glas',
       image: 'https://images.unsplash.com/photo-1619118884592-11b151f1ae11?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-      description: 'Crystal-clear acrylic with internal 3D laser etching'
+      description: 'Klare Gravuren für moderne und elegante Designs.'
     }
   ];
 
@@ -141,7 +141,7 @@ const GallerySection = () => {
               textShadow: isInView ? '0 0 20px rgba(255, 255, 255, 0.3)' : 'none',
             }}
           >
-            Our Gallery
+            Unsere Galerie
           </motion.h2>
           <motion.p 
             className="max-w-2xl mx-auto text-gray-300"
@@ -152,8 +152,7 @@ const GallerySection = () => {
               textShadow: isInView ? '0 0 10px rgba(255, 255, 255, 0.1)' : 'none',
             }}
           >
-            Explore our premium laser-engraved products, crafted with precision
-            and attention to detail.
+            Entdecken Sie unsere hochwertigen Gravurmaterialien für außergewöhnliche Ergebnisse.
           </motion.p>
         </motion.div>
 
@@ -163,9 +162,9 @@ const GallerySection = () => {
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          {products.map((product, index) => (
+          {materials.map((material, index) => (
             <motion.div
-              key={product.id}
+              key={material.id}
               className="group relative overflow-hidden rounded-lg bg-gray-900 border border-gray-800"
               variants={itemVariants}
               whileHover={{
@@ -190,8 +189,8 @@ const GallerySection = () => {
                 />
                 
                 <motion.img 
-                  src={product.image} 
-                  alt={product.name} 
+                  src={material.image} 
+                  alt={material.name} 
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" 
                   whileHover={{
                     filter: 'brightness(1.1) contrast(1.1)',
@@ -228,7 +227,7 @@ const GallerySection = () => {
                     textShadow: '0 0 10px rgba(255, 255, 255, 0.2)',
                   }}
                 >
-                  {product.name}
+                  {material.name}
                 </motion.h3>
                 <motion.p 
                   className="text-gray-300 text-sm group-hover:text-gray-200 transition-colors duration-300"
@@ -236,7 +235,7 @@ const GallerySection = () => {
                     textShadow: '0 0 5px rgba(255, 255, 255, 0.1)',
                   }}
                 >
-                  {product.description}
+                  {material.description}
                 </motion.p>
               </motion.div>
 

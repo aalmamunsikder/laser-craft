@@ -164,7 +164,7 @@ const VideoSection = () => {
                   textShadow: '0 0 10px rgba(255, 255, 255, 0.2)',
                 }}
               >
-                Video Coming Soon
+                Video Kommt Bald
               </motion.p>
               
               <motion.p 

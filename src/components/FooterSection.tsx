@@ -15,11 +15,10 @@ const FooterSection = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1">
             <h3 className="text-2xl font-bold mb-6">
-              LASER<span className="text-red-600">CRAFT</span>
+              LUMI<span className="text-red-600">XPERT</span>
             </h3>
             <p className="text-gray-400 mb-6">
-              Premium laser engraving solutions for businesses and individuals
-              looking to make a lasting impression.
+              Premium-Lasergravurlösungen für Unternehmen und Privatkunden, die einen bleibenden Eindruck hinterlassen möchten.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
@@ -41,61 +40,61 @@ const FooterSection = () => {
             </div>
           </div>
           <div className="col-span-1">
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6">Schnellzugriff</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  Home
+                  Startseite
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  About Us
+                  Über Uns
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  Services
+                  Dienstleistungen
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  Gallery
+                  Galerie
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  Contact
+                  Kontakt
                 </a>
               </li>
             </ul>
           </div>
           <div className="col-span-1">
-            <h4 className="text-lg font-semibold mb-6">Services</h4>
+            <h4 className="text-lg font-semibold mb-6">Dienstleistungen</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  Business Cards
+                  Visitenkarten
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  Custom Nameplates
+                  Individuelle Namensschilder
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  Wooden Products
+                  Holzprodukte
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  Acrylic Awards
+                  Acryl-Auszeichnungen
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
-                  Metal Engravings
+                  Metallgravuren
                 </a>
               </li>
             </ul>
@@ -103,29 +102,29 @@ const FooterSection = () => {
           <div className="col-span-1">
             <h4 className="text-lg font-semibold mb-6">Newsletter</h4>
             <p className="text-gray-400 mb-4">
-              Subscribe to our newsletter for the latest updates and offers.
+              Abonnieren Sie unseren Newsletter für die neuesten Angebote und Neuigkeiten.
             </p>
             <form className="flex">
-              <input type="email" placeholder="Your email" className="flex-1 p-2 bg-gray-800 border border-gray-700 rounded-l-md focus:outline-none focus:ring-1 focus:ring-red-600" />
+              <input type="email" placeholder="Ihre E-Mail" className="flex-1 p-2 bg-gray-800 border border-gray-700 rounded-l-md focus:outline-none focus:ring-1 focus:ring-red-600" />
               <button type="submit" className="px-4 py-2 bg-red-600 text-white rounded-r-md hover:bg-red-700 transition-colors duration-300">
-                Subscribe
+                Abonnieren
               </button>
             </form>
           </div>
         </div>
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} LaserCraft. All rights reserved.
+            © {new Date().getFullYear()} LumiXpert. Alle Rechte vorbehalten.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-500 text-sm hover:text-red-600 transition-colors duration-300">
-              Privacy Policy
+              Datenschutz
             </a>
             <a href="#" className="text-gray-500 text-sm hover:text-red-600 transition-colors duration-300">
-              Terms of Service
+              Nutzungsbedingungen
             </a>
             <a href="#" className="text-gray-500 text-sm hover:text-red-600 transition-colors duration-300">
-              Cookie Policy
+              Cookie-Richtlinie
             </a>
           </div>
         </div>

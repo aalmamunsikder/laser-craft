@@ -198,7 +198,7 @@ const HeroSection = () => {
                 ease: 'easeInOut',
               }}
             >
-              LC
+              X
             </motion.span>
             
             {/* Sparkle effects */}
@@ -292,7 +292,7 @@ const HeroSection = () => {
                   textShadow: '0 0 30px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1)',
                 }}
               >
-                LASER
+                LUMI
               </span>
               <span 
                 className="ml-2 sm:ml-3 text-red-500 inline-block"
@@ -300,7 +300,7 @@ const HeroSection = () => {
                   textShadow: '0 0 30px rgba(239, 68, 68, 0.6), 0 0 60px rgba(239, 68, 68, 0.3)',
                 }}
               >
-                CRAFT
+                XPERT
               </span>
             </motion.div>
             
@@ -310,8 +310,8 @@ const HeroSection = () => {
               animate={animationPhase >= 3 ? { opacity: 0.4 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <span className="text-white/30 inline-block">LASER</span>
-              <span className="ml-2 sm:ml-3 text-red-500/50 inline-block">CRAFT</span>
+              <span className="text-white/30 inline-block">LUMI</span>
+              <span className="ml-2 sm:ml-3 text-red-500/50 inline-block">XPERT</span>
             </motion.div>
           </div>
 
@@ -354,7 +354,7 @@ const HeroSection = () => {
                 textShadow: '0 0 20px rgba(255, 255, 255, 0.2)',
               }}
             >
-              We <span className="font-semibold text-red-400 italic">immortalize</span> the energy of your brand
+              Wir <span className="font-semibold text-red-400 italic">verewigen</span> die Energie Ihrer Marke.
             </h2>
             
             <motion.p 
@@ -363,7 +363,7 @@ const HeroSection = () => {
               animate={animationPhase >= 4 ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              Precision laser engraving that transforms ordinary products into extraordinary brand experiences
+              Präzise Lasergravuren, die gewöhnliche Produkte in außergewöhnliche Markenerlebnisse verwandeln.
             </motion.p>
           </div>
 
@@ -387,7 +387,7 @@ const HeroSection = () => {
               }}
             >
               <span className="relative flex items-center justify-center gap-3 z-10">
-                Get Started
+                Angebot anfordern
                 <ArrowRightIcon size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
               </span>
               
@@ -403,7 +403,7 @@ const HeroSection = () => {
                 boxShadow: '0 0 15px rgba(239, 68, 68, 0.2)',
               }}
             >
-              View Portfolio
+              Portfolio Ansehen
             </motion.button>
           </motion.div>
         </motion.div>
@@ -417,7 +417,7 @@ const HeroSection = () => {
           animate={animationPhase >= 4 ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1, duration: 0.6 }}
         >
-          <span className="text-xs mb-2 tracking-wider uppercase font-medium whitespace-nowrap">Scroll to explore</span>
+          <span className="text-xs mb-2 tracking-wider uppercase font-medium whitespace-nowrap">Scrollen zum Erkunden</span>
           <motion.div
             className="flex items-center justify-center"
             animate={{ y: [0, 6, 0] }}
