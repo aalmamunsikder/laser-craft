@@ -11,7 +11,72 @@ const FooterSection = () => {
   return <footer className="w-full bg-black relative overflow-hidden">
       {/* Red laser line at top */}
       <div className="h-[1px] w-full bg-gradient-to-r from-red-900 via-red-600 to-red-900"></div>
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      
+      {/* Mobile Simplified Footer */}
+      <div className="block md:hidden max-w-6xl mx-auto mobile-container py-8">
+        <div className="text-center space-y-6">
+          {/* Logo */}
+          <div>
+            <h3 className="text-xl font-bold mb-3">
+              LUMI<span className="text-red-600">XPERT</span>
+            </h3>
+            <p className="text-gray-400 text-sm max-w-xs mx-auto">
+              Premium-Lasergravurlösungen für außergewöhnliche Markenerlebnisse.
+            </p>
+          </div>
+          
+          {/* Social Icons */}
+          <div className="flex justify-center space-x-6">
+            <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300 touch-target">
+              <InstagramIcon className="w-5 h-5" />
+              <span className="sr-only">Instagram</span>
+            </a>
+            <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300 touch-target">
+              <FacebookIcon className="w-5 h-5" />
+              <span className="sr-only">Facebook</span>
+            </a>
+            <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300 touch-target">
+              <TwitterIcon className="w-5 h-5" />
+              <span className="sr-only">Twitter</span>
+            </a>
+            <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300 touch-target">
+              <YoutubeIcon className="w-5 h-5" />
+              <span className="sr-only">YouTube</span>
+            </a>
+          </div>
+          
+          {/* Quick Links - Compact */}
+          <div className="flex justify-center space-x-6 text-sm">
+            <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
+              Über Uns
+            </a>
+            <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
+              Galerie
+            </a>
+            <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-300">
+              Kontakt
+            </a>
+          </div>
+          
+          {/* Mobile Copyright */}
+          <div className="border-t border-gray-800 pt-6 text-center">
+            <p className="text-gray-500 text-xs mb-3">
+              © {new Date().getFullYear()} LumiXpert. Alle Rechte vorbehalten.
+            </p>
+            <div className="flex justify-center space-x-4 text-xs">
+              <a href="#" className="text-gray-500 hover:text-red-600 transition-colors duration-300">
+                Datenschutz
+              </a>
+              <a href="#" className="text-gray-500 hover:text-red-600 transition-colors duration-300">
+                Impressum
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Full Footer */}
+      <div className="hidden md:block max-w-6xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1">
             <h3 className="text-2xl font-bold mb-6">
@@ -129,12 +194,17 @@ const FooterSection = () => {
           </div>
         </div>
       </div>
-      {/* Scroll to top button */}
-      <motion.button onClick={scrollToTop} className="absolute bottom-8 right-8 bg-gray-900 text-white p-3 rounded-full border border-gray-800 hover:bg-gray-800 transition-colors duration-300" whileHover={{
-      y: -3
-    }} whileTap={{
-      scale: 0.95
-    }}>
+      {/* Scroll to top button - responsive positioning */}
+      <motion.button 
+        onClick={scrollToTop} 
+        className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-gray-900 text-white p-3 rounded-full border border-gray-800 hover:bg-gray-800 transition-colors duration-300 touch-target" 
+        whileHover={{
+          y: -3
+        }} 
+        whileTap={{
+          scale: 0.95
+        }}
+      >
         <ArrowUpIcon className="w-5 h-5" />
         <span className="sr-only">Scroll to top</span>
       </motion.button>
