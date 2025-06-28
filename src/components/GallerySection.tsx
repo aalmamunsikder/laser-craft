@@ -1,6 +1,13 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import LazyImage from './LazyImage';
+
+interface GalleryItem {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+}
 
 const GallerySection = () => {
   const ref = useRef(null);
@@ -9,33 +16,63 @@ const GallerySection = () => {
     margin: '-100px 0px' 
   });
 
-  // Memoize materials array to prevent unnecessary re-renders
-  const materials = useMemo(() => [
-    {
-      id: 1,
-      name: 'Metall',
-      image: '/metall.webp',
-      description: 'Hochwertige Gravuren auf Edelstahl, Aluminium und weiteren Metallen.'
-    },
-    {
-      id: 2,
-      name: 'Holz',
-      image: '/holz.jpg',
-      description: 'Präzise Gravuren auf nachhaltigem Holz für besondere Produkte.'
-    },
-    {
-      id: 3,
-      name: 'Leder',
-      image: '/leder.webp',
-      description: 'Stilvolle Gravuren auf Leder für exklusive Accessoires.'
-    },
-    {
-      id: 4,
-      name: 'Acryl / Glas',
-      image: '/glas.webp',
-      description: 'Klare Gravuren für moderne und elegante Designs.'
-    }
-  ], []);
+  const [materials, setMaterials] = useState<GalleryItem[]>([]);
+
+  // Load materials from localStorage and listen for updates
+  useEffect(() => {
+    const loadMaterials = () => {
+      const savedItems = localStorage.getItem('galleryItems');
+      if (savedItems) {
+        setMaterials(JSON.parse(savedItems));
+      } else {
+        // Default materials if none exist
+        const defaultMaterials: GalleryItem[] = [
+          {
+            id: 1,
+            name: 'Metall',
+            image: '/metall.webp',
+            description: 'Hochwertige Gravuren auf Edelstahl, Aluminium und weiteren Metallen.'
+          },
+          {
+            id: 2,
+            name: 'Holz',
+            image: '/holz.jpg',
+            description: 'Präzise Gravuren auf nachhaltigem Holz für besondere Produkte.'
+          },
+          {
+            id: 3,
+            name: 'Leder',
+            image: '/leder.webp',
+            description: 'Stilvolle Gravuren auf Leder für exklusive Accessoires.'
+          },
+          {
+            id: 4,
+            name: 'Acryl / Glas',
+            image: '/glas.webp',
+            description: 'Klare Gravuren für moderne und elegante Designs.'
+          }
+        ];
+        setMaterials(defaultMaterials);
+        localStorage.setItem('galleryItems', JSON.stringify(defaultMaterials));
+      }
+    };
+
+    // Load materials on component mount
+    loadMaterials();
+
+    // Listen for updates from admin panel
+    const handleGalleryUpdate = (event: CustomEvent) => {
+      setMaterials(event.detail);
+    };
+
+    window.addEventListener('galleryItemsUpdated', handleGalleryUpdate as EventListener);
+
+    return () => {
+      window.removeEventListener('galleryItemsUpdated', handleGalleryUpdate as EventListener);
+    };
+  }, []);
+
+
 
   // Enhanced animation variants matching AboutSection
   const containerVariants = {
