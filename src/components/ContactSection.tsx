@@ -305,17 +305,20 @@ const ContactSection = () => {
                 {
                   icon: <MailIcon className="w-6 h-6 text-red-600" />,
                   title: 'E-Mail',
-                  lines: ['info@lumixpert.de'],
+                  lines: [{ text: 'lumixpert.de@gmail.com', href: 'mailto:lumixpert.de@gmail.com' }],
                 },
                 {
                   icon: <PhoneIcon className="w-6 h-6 text-red-600" />,
                   title: 'Telefon',
-                  lines: ['+49 178 1638184'],
+                  lines: [{ text: '+49 178 1638184', href: 'tel:+491781638184' }],
                 },
                 {
                   icon: <MapPinIcon className="w-6 h-6 text-red-600" />,
                   title: 'Adresse',
-                  lines: ['Schwalbenweg 19', '34212 Melsungen'],
+                  lines: [
+                    { text: 'Schwalbenweg 19', href: null }, 
+                    { text: '34212 Melsungen', href: null }
+                  ],
                 },
               ].map((item, index) => (
                 <motion.div 
@@ -345,9 +348,19 @@ const ContactSection = () => {
                       {item.title}
                     </h4>
                     {item.lines.map((line, lineIndex) => (
-                      <p key={lineIndex} className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                        {line}
-                      </p>
+                      line.href ? (
+                        <a 
+                          key={lineIndex}
+                          href={line.href}
+                          className="block text-gray-400 group-hover:text-gray-300 hover:text-red-400 transition-colors duration-300 cursor-pointer"
+                        >
+                          {line.text}
+                        </a>
+                      ) : (
+                        <p key={lineIndex} className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                          {line.text}
+                        </p>
+                      )
                     ))}
                   </div>
                 </motion.div>

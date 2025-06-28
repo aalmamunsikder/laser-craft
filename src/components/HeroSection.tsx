@@ -5,6 +5,17 @@ import { ArrowRightIcon, ChevronDownIcon } from 'lucide-react';
 const HeroSection = () => {
   const [animationPhase, setAnimationPhase] = useState(0);
 
+  // Function to scroll to contact section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // Generate stable particle positions
   const particles = React.useMemo(() => 
     Array.from({ length: 25 }, (_, i) => ({
@@ -432,6 +443,7 @@ const HeroSection = () => {
               style={{
                 boxShadow: '0 0 20px rgba(239, 68, 68, 0.3)',
               }}
+              onClick={scrollToContact}
             >
               <span className="relative flex items-center justify-center gap-3 z-10">
                 Angebot anfordern
@@ -457,9 +469,12 @@ const HeroSection = () => {
         >
           <span className="text-xs mb-2 tracking-wider uppercase font-medium whitespace-nowrap">Scrollen zum Erkunden</span>
           <motion.div
-            className="flex items-center justify-center"
+            className="flex items-center justify-center cursor-pointer"
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            onClick={scrollToContact}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <ChevronDownIcon size={20} />
           </motion.div>
